@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Avatar } from "@material-ui/core";
 import AccessTimeIcon from "@material-ui/icons/AccessTime";
 import SearchIcon from "@material-ui/icons/Search";
+import HelpOutlineIcon from "@material-ui/icons/HelpOutline"
 
 function Header() {
     return <HeaderContainer>
@@ -13,17 +14,30 @@ function Header() {
             <AccessTimeIcon />
         </HeaderLeft>
 
-        {/* middle */}
         <HeaderSearch>
             <SearchIcon />
             <input type="text" placeholder="Search Flack" />
         </HeaderSearch>
 
         {/* right */}
+        <HeaderRight>
+            <HelpOutlineIcon />
+        </HeaderRight>
     </HeaderContainer>
 }
 
 export default Header;
+
+const HeaderRight = styled.div`
+    flex: 0.3;
+    display: flex;
+    align-items: flex-end;
+
+    > .MuiSvgIcon-root {
+        margin-left: auto;
+        margin-right: 20px;
+    }
+`;
 
 const HeaderSearch = styled.div`
     flex: 0.4;
