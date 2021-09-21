@@ -14,7 +14,7 @@ function App() {
       <>
         <Switch>
           <Route path="/" exact>
-            <h1>home page</h1>
+            <Header />
           </Route>
         </Switch>
       </>
