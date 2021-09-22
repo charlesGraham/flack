@@ -3,9 +3,9 @@ import { createSlice } from '@reduxjs/toolkit';
 
 
 export const counterSlice = createSlice({
-  name: 'counter',
+  name: 'app',
   initialState: {
-    value: 0,
+    roomId: 0,
   },
   // The `reducers` field lets us define reducers and generate associated actions
   reducers: {
