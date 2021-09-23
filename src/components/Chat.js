@@ -8,6 +8,8 @@ import { selectRoomId } from "../features/appSlice";
 import ChatInput from "../components/ChatInput";
 import { useCollection, useDocument } from "react-firebase-hooks/firestore";
 import {db} from "../firebase";
+import { Message } from "@material-ui/icons";
+import Messages from "../components/Messages";
 
 
 function Chat() {
@@ -42,7 +44,20 @@ function Chat() {
                 </Header>
 
                 <ChatMessages>
-                    {/* list out all the messages */}
+                    {roomMessages?.docs.map((doc) => {
+                        const { message, timestamp, user, userImage } = doc.data();
+
+                        return (
+                            <Messages
+                                key={doc.id}
+                                message={message}
+                                timestamp={timestamp}
+                                user={user}
+                                userImage={userImage}
+                            />
+                        );
+                    })}
+
                 </ChatMessages>
 
                 <ChatInput
