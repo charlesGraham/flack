@@ -15,6 +15,7 @@ function ChatInput({ channelName, channelId, chatRef }) {
             return false;
         }
 
+        // pulls in message data
         db.collection('rooms').doc(channelId).collection('messages').add({
             message: input,
             timestamp: firebase.firestore.FieldValue.serverTimestamp(),
@@ -22,6 +23,7 @@ function ChatInput({ channelName, channelId, chatRef }) {
             userImage: 'https://via.placeholder.com/100', 
         });
 
+        //auto scroll to newest message
         chatRef.current.scrollIntoView({
             behavior: "smooth",
         });
