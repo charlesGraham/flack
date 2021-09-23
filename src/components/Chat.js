@@ -8,7 +8,7 @@ import { selectRoomId } from "../features/appSlice";
 import ChatInput from "../components/ChatInput";
 import { useCollection, useDocument } from "react-firebase-hooks/firestore";
 import {db} from "../firebase";
-import { Message } from "@material-ui/icons";
+// import { Message } from "@material-ui/icons";
 import Messages from "../components/Messages";
 
 
