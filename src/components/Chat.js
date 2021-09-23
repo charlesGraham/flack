@@ -46,7 +46,7 @@ function Chat() {
                 </ChatMessages>
 
                 <ChatInput
-                    // channel name
+                    channelName={roomDetails?.data().name}
                     channelId={roomId}
                 />
             </>
