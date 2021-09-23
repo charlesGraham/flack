@@ -5,7 +5,6 @@ export const appSlice = createSlice({
   initialState: {
     roomId: null,
   },
-
   reducers: {
     enterRoom: (state, action) => {
       state.roomId = action.payload.roomId;
