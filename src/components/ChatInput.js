@@ -11,7 +11,7 @@ function ChatInput({ channelName, channelId }) {
     const sendMessage = e => {
         e.preventDefault(); // prevents refresh
 
-        if (channelId) {
+        if (!channelId) {
             return false;
         }
 
