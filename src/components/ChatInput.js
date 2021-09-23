@@ -21,6 +21,8 @@ function ChatInput({ channelName, channelId }) {
             user: "Charles Graham",
             userImage: 'https://via.placeholder.com/100', 
         });
+
+        setInput('');
     }
 
     return (
