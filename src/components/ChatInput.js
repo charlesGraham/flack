@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Button } from "@material-ui/core";
-import {db} from "../firebase";
+import {auth, db} from "../firebase";
 import firebase from "firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 function ChatInput({ channelName, channelId, chatRef }) {
 
     const [input, setInput] = useState("");
+    const [user] = useAuthState(auth);
 
     const sendMessage = e => {
         e.preventDefault(); // prevents refresh
@@ -19,8 +21,8 @@ function ChatInput({ channelName, channelId, chatRef }) {
         db.collection('rooms').doc(channelId).collection('messages').add({
             message: input,
             timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-            user: "Charles Graham",
-            userImage: 'https://scontent-lax3-1.xx.fbcdn.net/v/t31.18172-8/12017523_10153210777834157_2813023791713451007_o.jpg?_nc_cat=109&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=ujkZiO6mKcgAX96lImp&_nc_ht=scontent-lax3-1.xx&oh=49315975301875d1e051289f1d0fc059&oe=6173EAEA', 
+            user: user.displayName,
+            userImage: user.photoURL, 
         });
 
         //auto scroll to newest message
