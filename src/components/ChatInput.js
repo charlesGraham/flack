@@ -20,7 +20,7 @@ function ChatInput({ channelName, channelId, chatRef }) {
             message: input,
             timestamp: firebase.firestore.FieldValue.serverTimestamp(),
             user: "Charles Graham",
-            userImage: 'https://via.placeholder.com/100', 
+            userImage: 'https://scontent-lax3-1.xx.fbcdn.net/v/t31.18172-8/12017523_10153210777834157_2813023791713451007_o.jpg?_nc_cat=109&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=ujkZiO6mKcgAX96lImp&_nc_ht=scontent-lax3-1.xx&oh=49315975301875d1e051289f1d0fc059&oe=6173EAEA', 
         });
 
         //auto scroll to newest message
