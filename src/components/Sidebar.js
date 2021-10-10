@@ -16,13 +16,14 @@ import AddIcon from "@material-ui/icons/Add";
 import { useCollection } from "react-firebase-hooks/firestore";
 import {auth, db} from "../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
+import "./Sidebar.css";
 
 function Sidebar() {
     const [channels] = useCollection(db.collection('rooms'));
     const [user] = useAuthState(auth);
 
     return (
-        <SidebarContainer>
+        <SidebarContainer className="sidebar-container">
             <SidebarHeader>
                 <SidebarInfo>
                     <h2>CreativeInk.io</h2>
@@ -68,6 +69,9 @@ const SidebarContainer = styled.div`
     border-top: 1px solid #49274b;
     max-width: 260px;
     margin-top: 60px;
+    overflow-y: scroll;
+
+
 
     > hr {
         margin-top: 10px;

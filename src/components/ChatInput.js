@@ -58,6 +58,7 @@ const ChatInputContainer = styled.div`
         position: relative;
         display: flex;
         justify-content: center;
+        //background-color: transparent;
     }
 
     > form > input {
